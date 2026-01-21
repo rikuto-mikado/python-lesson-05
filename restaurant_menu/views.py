@@ -1,5 +1,7 @@
 from django.views import generic
-from .models import Item
+
+# Import MEAL_TYPE to pass meal category choices to the template context for menu filtering/display
+from .models import Item, MEAL_TYPE
 
 
 class MenuList(generic.ListView):
@@ -7,7 +9,8 @@ class MenuList(generic.ListView):
     template_name = "index.html"
 
     def get_context_data(self, **kwargs):
-        context = {"meals": ["Pizza", "Pasta"], "ingredients": ["Tomato", "Cheese"]}
+        context = {}
+        context["meals"] = MEAL_TYPE
         return context
 
 
