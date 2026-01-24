@@ -2,13 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Title</title>
 </head>
 <body>
     <h1>Restaurant Menu</h1>
-    <h3>{{ meals }}</h3>
-    <h3>{{ ingredients }}</h3>
-    
+    {% for meal in meals %}
+    <!-- Display the meal name (second element of the tuple) -->
+    <h2>{{ meal.1 }}</h2>
+    {% for row in item_list %}
+        {{ row.meal }}
+        {{ row.description }}
+    {% endfor %}
+    {% endfor %}
 </body>
 </html>
