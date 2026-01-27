@@ -10,8 +10,8 @@
     <!-- Display the meal name (second element of the tuple) -->
     <h2>{{ meal.1 }}</h2>
     {% for row in item_list %}
-        {{ row.meal }}
-        {{ row.description }}
+        <h3>{{ row.meal }}</h3>
+        <p>{{ row.description }}</p>
     {% endfor %}
     {% endfor %}
 </body>
