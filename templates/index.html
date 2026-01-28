@@ -6,13 +6,16 @@
 </head>
 <body>
     <h1>Restaurant Menu</h1>
-    {% for meal in meals %}
-    <!-- Display the meal name (second element of the tuple) -->
-    <h2>{{ meal.1 }}</h2>
-    {% for row in item_list %}
-        <h3>{{ row.meal }}</h3>
-        <p>{{ row.description }}</p>
-    {% endfor %}
-    {% endfor %}
+        {% for meal in meals %}
+            <!-- Display the meal name (second element of the tuple) -->
+             <h2>{{ meal.1 }}</h2>
+                 {% for row in item_list %}
+                     <!-- Check if item's meal_type matches the current meal category code (first element of tuple) -->
+                     {% if row.meal_type == meal.0 %}
+                     <h3>{{ row.meal }}</h3>
+                         <p>{{ row.description }}</p>
+                     {% endif %}
+                 {% endfor %}
+        {% endfor %}
 </body>
 </html>
