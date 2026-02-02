@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Restaurant Menu</h1>
+    {% for meal in meals %}
+        <!-- Display the meal name (second element of the tuple) -->
+        <h2>{{ meal.1 }}</h2>
+        {% for row in item_list %}
+            <!-- Check if item's meal_type matches the current meal category code (first element of tuple) -->
+            {% if row.meal_type == meal.0 %}
+                {% if row.status == 0 %}
+                    <!-- Display meal name with strikethrough to indicate it is sold out (status=0) -->
+                    <h3><del>{{ row.meal }}</del></h3>
+                    <p>{{ row.description }}</p>
+                {% else %}
+                    <!-- Display meal name without strikethrough if it is available (status != 0) -->
+                    <h3>{{ row.meal }}</h3>
+                    <p>{{ row.description }}</p>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "python-lesson-05",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rikuto Mikado",
+  "license": "MIT",
+  "description": "A restaurant menu web app built with Django.",
+  "devDependencies": {
+    "prettier": "^3.8.1"
+  }
+}
