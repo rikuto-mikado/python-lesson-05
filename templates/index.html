@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="container">
     <h1>Restaurant Menu</h1>
     {% for meal in meals %}
         <!-- Display the meal name (second element of the tuple) -->
@@ -20,4 +21,5 @@
             {% endif %}
         {% endfor %}
     {% endfor %}
+</div>
 {% endblock content %}
